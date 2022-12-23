@@ -47,11 +47,3 @@ public class LocalidadService {
         localidadRespository.deleteById(id);
     }
 }
-
-/**
-<<<<<<< HEAD
- * Prueba GIT
-=======
- * Prueba GIT 02
->>>>>>> branch02
- */
