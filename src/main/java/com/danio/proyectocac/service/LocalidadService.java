@@ -49,5 +49,9 @@ public class LocalidadService {
 }
 
 /**
+<<<<<<< HEAD
  * Prueba GIT
+=======
+ * Prueba GIT 02
+>>>>>>> branch02
  */
