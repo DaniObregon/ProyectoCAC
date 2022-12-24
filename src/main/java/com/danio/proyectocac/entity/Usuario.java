@@ -19,6 +19,6 @@ public class Usuario {
 
     private String clave;
 
-    private String usuario;
+    private String user;
 
 }

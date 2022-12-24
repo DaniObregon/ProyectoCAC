@@ -14,7 +14,7 @@ public class UsuarioDto {
         UsuarioDto usuarioDto = new UsuarioDto();
         usuarioDto.setId(usuario.getId());
         usuarioDto.setNombreApellido(usuario.getNombreApellido());
-        usuarioDto.setUsuario(usuario.getUsuario());
+        usuarioDto.setUsuario(usuario.getUser());
         usuarioDto.setClave(usuario.getClave());
         return usuarioDto;
     }
