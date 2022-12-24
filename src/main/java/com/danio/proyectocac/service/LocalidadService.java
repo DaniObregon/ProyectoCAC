@@ -46,4 +46,12 @@ public class LocalidadService {
         provincia.removeLocalidad(localidad);
         localidadRespository.deleteById(id);
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+/**
+ * Prueba GIT 02
+ */
+>>>>>>> branch02
