@@ -1,6 +1,7 @@
 package com.danio.proyectocac.controller;
 
 import com.danio.proyectocac.dto.UsuarioDto;
+import com.danio.proyectocac.dto.RoleToUser;
 import com.danio.proyectocac.entity.Usuario;
 import com.danio.proyectocac.service.UsuarioService;
 import org.springframework.http.HttpStatus;
@@ -21,15 +22,21 @@ public class UsuarioController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<UsuarioDto> addUser(@RequestBody final Usuario usuario){
+    public ResponseEntity<UsuarioDto> addUser(@RequestBody final Usuario usuario) {
         usuarioService.saveUser(usuario);
         return new ResponseEntity<>(UsuarioDto.from(usuario), HttpStatus.OK);
     }
 
     @GetMapping
-    public ResponseEntity<List<UsuarioDto>> getAllUsers(){
+    public ResponseEntity<List<UsuarioDto>> getAllUsers() {
         List<Usuario> usuarios = usuarioService.getAllUsers();
         List<UsuarioDto> usuarioDtos = usuarios.stream().map(UsuarioDto::from).collect(Collectors.toList());
         return new ResponseEntity<>(usuarioDtos, HttpStatus.OK);
+    }
+
+    @PostMapping("/role/addtouser")
+    public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUser roleToUser) {
+        usuarioService.AddRoleToUsuario(roleToUser.getName(), roleToUser.getUsername());
+        return ResponseEntity.ok().build();
     }
 }

@@ -26,6 +26,7 @@ public class LocalidadService {
 
     /**
      * Crea una Localidad y a la vez la agrega a la provincia seleccionada segun Enum
+     *
      * @param localidad
      * @return
      */
@@ -40,18 +41,10 @@ public class LocalidadService {
     }
 
     @Transactional
-    public void deleteLocalidad(Long id){
+    public void deleteLocalidad(Long id) {
         Localidad localidad = findLocalidadById(id);
         Provincia provincia = provinciaService.findProvinciaByEnmun(localidad.getProvinciaEnum());
         provincia.removeLocalidad(localidad);
         localidadRespository.deleteById(id);
     }
-<<<<<<< HEAD
 }
-=======
-}
-
-/**
- * Prueba GIT 02
- */
->>>>>>> branch02
