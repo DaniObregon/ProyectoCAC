@@ -11,16 +11,16 @@ import java.util.Collection;
 public class UsuarioDto {
     private Long id;
     private String nombreApellido;
-    private String clave;
-    private String usuario;
+    private String password;
+    private String username;
     private Collection<Role> roles = new ArrayList<>();
 
     public static UsuarioDto from(Usuario usuario) {
         UsuarioDto usuarioDto = new UsuarioDto();
         usuarioDto.setId(usuario.getId());
         usuarioDto.setNombreApellido(usuario.getNombreApellido());
-        usuarioDto.setUsuario(usuario.getUsername());
-        usuarioDto.setClave(usuario.getClave());
+        usuarioDto.setUsername(usuario.getUsername());
+        usuarioDto.setPassword(usuario.getPassword());
         usuarioDto.setRoles(usuario.getRoles());
         return usuarioDto;
     }

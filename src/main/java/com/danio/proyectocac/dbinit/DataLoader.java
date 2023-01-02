@@ -38,15 +38,15 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         if (provinciaService.getAllProvincias().size() == 0) {
-            createGenre("/buenosaires.png", "Buenos Aires");
-            createGenre("/cordoba.png", "Cordoba");
-            createGenre("/sanluis.png", "San Luis");
-            createGenre("/mendoza.png", "Mendoza");
-            createGenre("/neuquen.png", "Neuquen");
+            createProvince("/buenosaires.png", "Buenos Aires");
+            createProvince("/cordoba.png", "Cordoba");
+            createProvince("/sanluis.png", "San Luis");
+            createProvince("/mendoza.png", "Mendoza");
+            createProvince("/neuquen.png", "Neuquen");
         }
     }
 
-    private void createGenre(String image, String name) {
+    private void createProvince(String image, String name) {
 
         Provincia provincia = new Provincia();
         File file = new File(provinciaImageFolder + image);

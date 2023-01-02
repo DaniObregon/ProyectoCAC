@@ -24,7 +24,7 @@ public class Usuario {
 
     private String username;
 
-    private String clave;
+    private String password;
 
     @ManyToMany(fetch = EAGER)
     private Collection<Role> roles = new ArrayList<>();

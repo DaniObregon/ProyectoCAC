@@ -21,13 +21,13 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @PostMapping("/save")
+    @PostMapping("/user/save")
     public ResponseEntity<UsuarioDto> addUser(@RequestBody final Usuario usuario) {
         usuarioService.saveUser(usuario);
         return new ResponseEntity<>(UsuarioDto.from(usuario), HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping("/users")
     public ResponseEntity<List<UsuarioDto>> getAllUsers() {
         List<Usuario> usuarios = usuarioService.getAllUsers();
         List<UsuarioDto> usuarioDtos = usuarios.stream().map(UsuarioDto::from).collect(Collectors.toList());
